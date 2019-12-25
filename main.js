@@ -69,16 +69,36 @@ const data = [
 
 function SearchData(lastName) {
     for (let i = 0; i < data.length; i++) {
-        if (data[i].lastName.toLowerCase() === lastName.toLocaleLowerCase())
-            return data[i];
+        if (data[i].lastName.toLowerCase() === lastName.toLowerCase())
+
+                return data[i];
+
     }
 
 
     return 'No results found for your request';
 }
 
-let result = SearchData('DaKOtA');
-console.log(result);
+let input= document.getElementById('info');
+
+input.addEventListener("keyup", function (event) {
+    let result = SearchData(event.target.value);
+    if (typeof (result) === 'object')
+    {
+        let field = '';
+        for (let key in result){
+            field += key + ': ' + result[key] + '<br>'
+        }
+        document.getElementById('output').innerHTML = field;
+
+    }
+    else {
+        document.getElementById('output').innerHTML = result;
+
+    }
+
+});
+
 
 
 
