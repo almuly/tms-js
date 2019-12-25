@@ -35,15 +35,51 @@
 // console.log(false == 0);
 // console.log(false == "");
 // console.log(false === "");
+//
+// //Задание №5
+// let animal = {
+//     type:'dog',
+//     weight: 40
+// };
+// animal.color = 'aquamarin';
+// animal.speed = 64;
+// delete animal.weight;
+// animal.color = 'silver';
+// console.log(animal);
 
-//Задание №5
-let animal = {
-    type:'dog',
-    weight: 40
-};
-animal.color = 'aquamarin';
-animal.speed = 64;
-delete animal.weight;
-animal.color = 'silver';
-console.log( animal);
+
+//lesson 3
+const data = [
+    {
+        firstName: 'Ashton',
+        lastName: 'Kutcher',
+        age: 40,
+    },
+    {
+        firstName: 'Bradley',
+        lastName: 'Pitt',
+        age: 54,
+    },
+    {
+        firstName: 'Hannah',
+        lastName: 'Dakota',
+        age: 24,
+    },
+];
+
+function SearchData(lastName) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].lastName.toLowerCase() === lastName.toLocaleLowerCase())
+            return data[i];
+    }
+
+
+    return 'No results found for your request';
+}
+
+let result = SearchData('DaKOtA');
+console.log(result);
+
+
+
 
