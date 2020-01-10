@@ -49,57 +49,130 @@
 
 
 //lesson 3
-const data = [
-    {
-        firstName: 'Ashton',
-        lastName: 'Kutcher',
-        age: 40,
-    },
-    {
-        firstName: 'Bradley',
-        lastName: 'Pitt',
-        age: 54,
-    },
-    {
-        firstName: 'Hannah',
-        lastName: 'Dakota',
-        age: 24,
-    },
-];
+// const data = [
+//     {
+//         firstName: 'Ashton',
+//         lastName: 'Kutcher',
+//         age: 42,
+//     },
+//     {
+//         firstName: 'Bradley',
+//         lastName: 'Pitt',
+//         age: 56,
+//     },
+//     {
+//         firstName: 'Hannah',
+//         lastName: 'Dakota',
+//         age: 26,
+//     },
+// ];
+//
+// function SearchData(lastName) {
+//     for (let i = 0; i < data.length; i++) {
+//         if (data[i].lastName.toLowerCase() === lastName.toLowerCase())
+//
+//             return data[i];
+//
+//     }
+//
+//
+//     return 'No results found for your request';
+// }
+//
+// let input = document.getElementById('info');
+//
+// input.addEventListener("keyup", function (event) {
+//     let result = SearchData(event.target.value);
+//     if (typeof (result) === 'object') {
+//         let field = '';
+//         for (let key in result) {
+//             field += key + ': ' + result[key] + '<br>'
+//         }
+//         document.getElementById('output').innerHTML = field;
+//
+//     } else {
+//         document.getElementById('output').innerHTML = result;
+//
+//     }
+//
+// });
 
-function SearchData(lastName) {
-    for (let i = 0; i < data.length; i++) {
-        if (data[i].lastName.toLowerCase() === lastName.toLowerCase())
 
-                return data[i];
+//lesson 4
+//4.1
+
+// function  min (a,b) {
+//     if (a < b) {
+//         return a;
+//     } else{
+//         return b;
+//     }
+// }
+// function  max (a,b) {
+//     if (a < b) {
+//         return b;
+//     } else{
+//         return a;
+//     }
+// }
+//
+// function getMin(a,b) {
+//     return a > b ? b : a;
+// }
+// function getMax(a,b) {
+//     return a > b ? a : b;
+// }
+// alert(min(6,8));
+
+//******************************************************************************
+//4.2
+// let arr = [12, 50, 1, 11, 20, 100, 53, 65, 90, 66, 0, 0, 300];
+// let newArr = [];
+//
+// function IsArr(arr) {
+//     arr.forEach(function (item, index, array) {
+//         if (item == 0) {
+//             newArr.push('zero')
+//         } else if (item % 100 == 0) {
+//             newArr.push(item / 100 + 'zerozero')
+//         } else if (item % 10 == 0) {
+//             newArr.push(item / 10 + 'zero')
+//         } else {
+//             newArr.push(item)
+//         }
+//
+//     });
+// }
+//
+// IsArr(arr);
+// alert(newArr);
+
+//*******************************************************************************
+
+// let k = arr.length;
+// for  (let i = 0; i < k; i++) {
+//     if (i % 10 == 0) {
+//         return newArr.splice(i,0,`${i/10 + 'zero'}`)
+//     }
+//     ;
+// }
+//*******************************************************************************
+
+
+//classwork 4
+let palindrom = 'rhjn'
+
+function IsPalindrom() {
+    let ArrPalindrom = palindrom.split('');
+    ArrPalindrom = ArrPalindrom.reverse().join('');
+    if (palindrom == ArrPalindrom) {
+        return 'УРА!';
+    } else {
+        return 'Увы:(';
 
     }
-
-
-    return 'No results found for your request';
 }
 
-let input= document.getElementById('info');
-
-input.addEventListener("keyup", function (event) {
-    let result = SearchData(event.target.value);
-    if (typeof (result) === 'object')
-    {
-        let field = '';
-        for (let key in result){
-            field += key + ': ' + result[key] + '<br>'
-        }
-        document.getElementById('output').innerHTML = field;
-
-    }
-    else {
-        document.getElementById('output').innerHTML = result;
-
-    }
-
-});
-
-
-
+alert(IsPalindrom());
 
 
