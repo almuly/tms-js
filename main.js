@@ -159,20 +159,58 @@
 //*******************************************************************************
 
 
-//classwork 4
-let palindrom = 'rhjn'
+// //classwork 4
+// let palindrom = 'rhjn'
+//
+// function IsPalindrom() {
+//     let ArrPalindrom = palindrom.split('');
+//     ArrPalindrom = ArrPalindrom.reverse().join('');
+//     if (palindrom == ArrPalindrom) {
+//         return 'УРА!';
+//     } else {
+//         return 'Увы:(';
+//
+//     }
+// }
+//
+// alert(IsPalindrom());
+//*******************************************************************************
 
-function IsPalindrom() {
-    let ArrPalindrom = palindrom.split('');
-    ArrPalindrom = ArrPalindrom.reverse().join('');
-    if (palindrom == ArrPalindrom) {
-        return 'УРА!';
-    } else {
-        return 'Увы:(';
+// homework5.1
 
+// function sum(x){
+//     return function(y){
+//         return x + y
+//     }
+// }
+//
+// console.log(sum(5)(2));
+//*******************************************************************************
+
+// homework5.2
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const text3 = document.getElementById('text3');
+
+function changeColor(element) {
+
+    for (let i = 0; i <= colors.length;) {
+
+        return function () {
+            element.style.color = colors[i];
+            i++;
+            if(i > colors.length){
+                i = 0;
+            }
+
+        }
     }
+
 }
 
-alert(IsPalindrom());
-
+text1.onclick = changeColor(text1);
+text2.onclick = changeColor(text2);
+text3.onclick = changeColor(text3);
+//*******************************************************************************
 
