@@ -188,29 +188,56 @@
 //*******************************************************************************
 
 // homework5.2
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const text1 = document.getElementById('text1');
-const text2 = document.getElementById('text2');
-const text3 = document.getElementById('text3');
+// const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+// const text1 = document.getElementById('text1');
+// const text2 = document.getElementById('text2');
+// const text3 = document.getElementById('text3');
+//
+// function changeColor(element) {
+//
+//     for (let i = 0; i <= colors.length;) {
+//
+//         return function () {
+//             element.style.color = colors[i];
+//             i++;
+//             if(i > colors.length){
+//                 i = 0;
+//             }
+//
+//         }
+//     }
+//
+// }
+//
+// text1.onclick = changeColor(text1);
+// text2.onclick = changeColor(text2);
+// text3.onclick = changeColor(text3);
+//*******************************************************************************
 
-function changeColor(element) {
-
-    for (let i = 0; i <= colors.length;) {
-
-        return function () {
-            element.style.color = colors[i];
-            i++;
-            if(i > colors.length){
-                i = 0;
+// homework6
+const colors = {
+    data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
+    [Symbol.iterator]() {
+        return this;
+    },
+    next(id) {
+        Symbol('id');
+        id = 0;
+        if (id > this.data.length) {
+            id = 0;
+            return {
+                done: true
             }
+        } else {
+            return {
+                value: this.data[id++],
+                done: false
+            };
+
 
         }
     }
-
+};
+for (const num of colors) {
+    console.log(num);
 }
-
-text1.onclick = changeColor(text1);
-text2.onclick = changeColor(text2);
-text3.onclick = changeColor(text3);
-//*******************************************************************************
-
