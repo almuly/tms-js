@@ -186,6 +186,33 @@
 //
 // console.log(sum(5)(2));
 //*******************************************************************************
+//
+// // homework5.2
+// const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+// const text1 = document.getElementById('text1');
+// const text2 = document.getElementById('text2');
+// const text3 = document.getElementById('text3');
+//
+// function changeColor(element) {
+//
+//     for (let i = 0; i <= colors.length;) {
+//
+//         return function () {
+//             element.style.color = colors[i];
+//             i++;
+//             if(i === colors.length){
+//                 i = 0;
+//             }
+//
+//         }
+//     }
+//
+// }
+//
+// text1.onclick = changeColor(text1);
+// text2.onclick = changeColor(text2);
+// text3.onclick = changeColor(text3);
+//*******************************************************************************
 
 // homework5.2
 // const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
@@ -214,30 +241,64 @@
 // text3.onclick = changeColor(text3);
 //*******************************************************************************
 
-// homework6
-const colors = {
-    data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
-    [Symbol.iterator]() {
-        return this;
-    },
-    next(id) {
-        Symbol('id');
-        id = 0;
-        if (id > this.data.length) {
-            id = 0;
-            return {
-                done: true
+
+// // homework6
+// const text1 = document.getElementById('text1');
+// const text2 = document.getElementById('text2');
+// const text3 = document.getElementById('text3');
+// const changeStyle = id => event => {
+//     event.target.style.color = colors.next(id).value;
+// };
+//
+// const colors = {
+//     data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
+//     [Symbol.iterator]() {
+//         return this;
+//     },
+//     next(id) {
+//
+//         if (this[id] === undefined) {
+//             this[id] = 0;
+//         }
+//         if ((this[id] < this.data.length)) {
+//             return {
+//
+//                 value: this.data[this[id]++],
+//             }
+//         } else {
+//             return {
+//                 value: this[id] = 0,
+//
+//             }
+//         }
+//     }
+// };
+//
+// text1.addEventListener('click', changeStyle(Symbol()));
+// text2.addEventListener('click', changeStyle(Symbol()));
+// text3.addEventListener('click', changeStyle(Symbol()));
+//
+// let a = [10,12,1,19,54,4,88,6,7];
+;
+arr = [5, 20, 7, 4, 99, 65, 20];
+
+function a(arr) {
+    let inArr = arr;
+    for (let i = 0; i < inArr.length; i++) {
+        for (let j = 0; j < inArr.length - i; j++) {
+            if (inArr[j] < inArr[j + 1]) {
+                let temp = inArr[j];
+                inArr[j] = inArr[j + 1];
+                inArr[j + 1] = temp;
             }
-        } else {
-            return {
-                value: this.data[id++],
-                done: false
-            };
-
-
         }
     }
-};
-for (const num of colors) {
-    console.log(num);
+    console.log(inArr);
+    return inArr;
 }
+
+let b = arr;
+console.log(a(b));
+console.log(b);
+
+console.log(arr);
